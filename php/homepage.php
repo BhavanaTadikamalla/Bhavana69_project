@@ -154,13 +154,13 @@ if(isset($_SESSION['email']))
                     <h2 class="intro-text text-center">Know Something
                         <strong>worth visiting</strong>
                     </h2>
-                    <hr>
-                    <img class="img-responsive img-border img-left" src="img/bg.jpg" alt="">
-                    <hr class="visible-xs">
-                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
-                    <p>A huge thanks to <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                </div>
+                    <p>We can help you eat more fruits and make your health wealth.Eating healthy can be a problem for some people. Our fast-paced world doesn’t always allow for people to sit down and enjoy a nice, balanced meal. While it may be easier to grab a burger and go, taking an extra couple of minutes to eat an apple or a banana makes all the difference.<br><br>
+
+                    So, the next time you reach for a Twinkie or a greasy burger, remember that you could just as easily replace those with some grapes, or an apple simply by visiting FRESHOO!!.<br> <br>
+
+                    We provide a platform for retailers to sell fruits and fix prices according to their wish and even customers can purchase fruits in interested store.
+                  </p>
+                     </div>
             </div>
         </div>
 
