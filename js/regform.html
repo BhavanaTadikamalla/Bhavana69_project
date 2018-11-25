@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		var firstname=false;
+		var lastname=false;
+		var useremail=false;
+		var password=false;
+		var confirm_password=false;
+		var check_confirm=false;
+		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		var password_reg= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+		var temp;
+		function validation(field)
+		{
+			if(field=='firstname')
+			{
+				if(document.getElementById("firstname").value=="")
+				{
+					document.getElementById("error_firstname").style.display="block";
+					firstname=false;
+				}	
+				else
+				{
+					document.getElementById("error_firstname").style.display="none";
+					firstname=true;
+				}	
+			}	
+			else if(field=='lastname')
+			{
+				if(document.getElementById("lastname").value=="")
+				{
+					document.getElementById("error_lastname").style.display="block";
+					lastname=false;
+				}	
+				else
+				{
+					document.getElementById("error_lastname").style.display="none";
+					lastname=true;
+				}	
+			}
+			else if(field=='email')
+			{
+				
+				temp=document.getElementById("email").value;
+				temp=re.test(String(temp).toLowerCase());
+				if((temp=="")||(temp==false))
+				{
+					document.getElementById("error_email").style.display="block";
+					useremail=false;
+				}	
+				else
+				{
+					document.getElementById("error_email").style.display="none";
+					useremail=true;
+				}	
+			}
+			else if(field=='pwd')
+			{
+				
+				temp=document.getElementById("pwd").value;
+				temp=password_reg.test(temp);
+				if((temp=="")||(temp==false))
+				{
+					document.getElementById("error_password").style.display="block";
+					password=false;
+				}	
+				else
+				{
+					document.getElementById("error_password").style.display="none";
+					password=true;
+				}
+				if((temp!=document.getElementById("c_pwd").value)&&(check_confirm==true))	
+				{
+					document.getElementById("error_confirmpassword").style.display="block";
+					confirm_password=false;
+				}	
+				else
+				{
+					document.getElementById("error_confirmpassword").style.display="none";
+					confirm_password=true;	
+				}	
+					
+			}
+			else if(field=='c_pwd')
+			{
+				
+				temp=document.getElementById("c_pwd").value;
+				
+				if((temp=="")||(temp!=document.getElementById("pwd").value))
+				{
+					document.getElementById("error_confirmpassword").style.display="block";
+					confirm_password=false;
+				}	
+				else
+				{
+					document.getElementById("error_confirmpassword").style.display="none";
+					confirm_password=true;
+				}	
+			}
+			if((firstname==true)&&(lastname==true)&&(useremail==true)&&(password==true)&&(confirm_password==true))
+			{
+				document.getElementById("form_button").disabled=false;
+			}	
+			else
+			{
+				document.getElementById("form_button").disabled=true;
+			}	
+		}
+		function cheking() {
+			check_confirm=true;
+		}
+		function form_send() 
+		{
+			console.log("good");
+		}
+	</script>	
+	<style type="text/css">
+		.container
+		{
+			margin-top: 10%;
+		}
+		.container>.row>div:nth-child(2)		
+		{
+			border: 3px solid #e9e9e9;
+			border-radius: 10px;
+			padding:4%;
+		}
+		.container>.row>div:nth-child(2)>form>button
+		{
+			display: block;
+			margin:0px auto;
+			background-color: #84e184;
+		}
+		.container>.row>div:nth-child(2)>form p
+		{
+			display: none;
+		}		
+	</style>	
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">				
+			</div>
+			<div class="col-sm-4">
+				<form  id="myform">
+					<div class="form-group">
+						<label for="firstname">FirstName</label>
+						<input type="text" name="firstname" id="firstname" class="form-control" onkeyup="validation('firstname')">
+						<p id="error_firstname">required</p>
+					</div>
+					<div class="form-group">
+						<label for="lastname">LastName</label>
+						<input type="text" name="lastname" id="lastname" class="form-control" onkeyup="validation('lastname')">
+						<p id="error_lastname">required</p>
+					</div>
+					<!-- <div class="form-groudiv">
+						<label for="username">Username</label>
+						<input type="text" name="username" id="username" class="form-control">
+					</div> -->
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email" class="form-control" onkeyup="validation('useremail')">
+						<p id="error_email">enter valid email id</p>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" class="form-control" onkeyup="validation('password')">
+						<p id="error_password">enter valid password</p>
+					</div>
+
+					<div class="form-group">
+						<label for="confirm_password">Confirm password</label>
+						<input type="password" name="confirm_password" id="confirm_password" class="form-control" onkeyup="validation('confirm_password')" onfocus="cheking()">
+						<p id="error_confirmpassword">confirm password</p>		
+					</div>
+					<button type="button" id="form_button" value="button" class="btn btn-default" onclick="form_send()" disabled="true">submit</button>
+				</form>
+			</div>
+			<div class="col-sm-4">				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
