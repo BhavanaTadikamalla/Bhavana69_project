@@ -13,6 +13,15 @@ Installing
 Open any browser , and type the text editor name you wish to install. I have used Sublime text 3.
 A webpage will be opened ,click on download button and follow the steps for installations.
 Similarly the same process for xampp control panel.
+Steps:
+Open the XAMPP website. Go to https://www.apachefriends.org/index.html in your computer's web browser
+Click XAMPP for Windows. It's a grey button near the bottom of the page.
+Depending on your browser, you may first have to select a save location or verify the download. 
+Double-click the downloaded file. This file should be named something like xampp-win32-7.2.4-0-VC15-installer, and you'll find it in the default downloads location (e.g., the "Downloads" folder or the desktop).
+Click Yes when prompted. This will open the XAMPP setup window.
+You may have to click OK on a warning if you have User Account Control (UAC) activated on your computer. 
+Click Next. It's at the bottom of the setup window. 
+Click Finish when prompted. It's at the bottom of the XAMPP window. Doing so will close the window and open the XAMPP Control Panel, which is where you'll access your servers.
 
 Databases
 Click on the button Admin under MySql then a page gets opened under click on new buttion and create your own databse and under that click new to create tables with specific columns and click Go, tables will be created.
