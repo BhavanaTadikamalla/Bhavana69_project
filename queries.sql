@@ -40,8 +40,14 @@ query: Select COUNT(email) from retailer;
 
 2.Write SQL to get the shoppers counts for each retailer (who purchased).
 
-query: Select COUNT(email) from orders where seller_email = '$email';
+query: Select COUNT(email) from orders where seller_email = '$-SESSION['email'];
 
 3.Write SQL to get all the shoppers count.
 
 query: Select COUNT(email) from customer;
+
+4.Write SQL to get purchase amount per daywrt to a retailer.
+ query: Select count(email)*100 from orders where email='$_SESSION['email'] AND DATE('timestamp')=CURDATE();
+ 
+5.Write SQL to find top retailer based on the number of purchases
+query: select seller_email from orders where max(select count(seller_email)from orders);
